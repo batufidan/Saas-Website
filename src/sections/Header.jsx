@@ -18,6 +18,20 @@ const Header = () => {
     };
   }, []);
 
+  const NavLink = ({ title }) => (
+    <LinkScroll
+      onClick={() => setIsOpen(false)}
+      to={title}
+      offset={-100}
+      spy
+      smooth
+      activeClass="nav-active"
+      className="base-bold text-p4 uppercase transition-colors duration-1000 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5"
+    >
+      {title}
+    </LinkScroll>
+  );
+
   return (
     <header
       className={clsx(
